@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>VELOZGLOBAL · premium domain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0b0d12;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 1.5rem;
+      margin: 0;
+      background: radial-gradient(circle at 20% 30%, #0d1420 0%, #030405 90%);
+      position: relative;
+    }
+
+    .glass-card {
+      max-width: 800px;
+      width: 100%;
+      padding: 3rem 2.8rem;
+      background: rgba(12, 18, 30, 0.45);
+      backdrop-filter: blur(14px) saturate(160%);
+      -webkit-backdrop-filter: blur(14px) saturate(160%);
+      border-radius: 54px;
+      border: 1px solid rgba(50, 120, 255, 0.20);
+      box-shadow: 0 30px 60px -20px rgba(0, 20, 60, 0.8), 0 0 0 1px rgba(30, 100, 255, 0.08) inset;
+      transition: all 0.3s ease;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(circle at 70% 30%, rgba(30, 80, 255, 0.08), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .domain-title {
+      font-size: clamp(2.6rem, 12vw, 4.6rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #f0f7ff 0%, #b6d4ff 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 0 30px rgba(30, 120, 255, 0.2);
+      line-height: 1.1;
+      word-break: break-word;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 400;
+      color: rgba(210, 230, 255, 0.85);
+      letter-spacing: 0.02em;
+      margin-bottom: 2.2rem;
+      background: rgba(0, 20, 50, 0.2);
+      padding: 0.4rem 1.8rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(70, 150, 255, 0.15);
+      display: inline-block;
+    }
+
+    .offer-btn, .contact-btn {
+      border: none;
+      padding: 1.1rem 3.4rem;
+      border-radius: 60px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(4px);
+      text-shadow: 0 2px 10px rgba(0, 20, 80, 0.8);
+      position: relative;
+      transform: scale(1);
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: inherit;
+      line-height: 1;
+      width: auto;
+      min-width: 220px;
+      gap: 8px;
+    }
+
+    .offer-btn {
+      background: rgba(10, 40, 100, 0.65);
+      border: 1px solid rgba(70, 160, 255, 0.5);
+      box-shadow: 0 0 25px rgba(30, 120, 255, 0.4), 0 8px 32px rgba(0, 30, 80, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      animation: glowPulse 3s infinite ease-in-out;
+      margin-bottom: 1rem;
+    }
+
+    .offer-btn:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 45px rgba(30, 140, 255, 0.8), 0 10px 40px rgba(0, 60, 180, 0.8);
+      background: rgba(20, 70, 180, 0.75);
+      border-color: rgba(110, 190, 255, 0.9);
+      animation: none;
+    }
+
+    .offer-btn:active {
+      transform: scale(0.97);
+    }
+
+    .contact-btn {
+      background: rgba(0, 30, 60, 0.4);
+      border: 1px solid rgba(70, 160, 255, 0.25);
+      box-shadow: 0 0 15px rgba(0, 80, 200, 0.15);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      font-size: 1.1rem;
+      padding: 0.8rem 2.8rem;
+      min-width: 180px;
+      margin-top: 0.2rem;
+      color: rgba(210, 235, 255, 0.9);
+      letter-spacing: 0.3px;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.03);
+      background: rgba(20, 60, 140, 0.5);
+      border-color: rgba(90, 180, 255, 0.5);
+      box-shadow: 0 0 30px rgba(30, 120, 255, 0.3);
+    }
+
+    .contact-btn:active {
+      transform: scale(0.97);
+    }
+
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 20px rgba(30, 120, 255, 0.3), 0 8px 32px rgba(0, 30, 80, 0.5); }
+      50% { box-shadow: 0 0 45px rgba(40, 150, 255, 0.8), 0 8px 40px rgba(0, 60, 180, 0.8); }
+      100% { box-shadow: 0 0 20px rgba(30, 120, 255, 0.3), 0 8px 32px rgba(0, 30, 80, 0.5); }
+    }
+
+    .contact-email {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: rgba(210, 230, 255, 0.9);
+      letter-spacing: 0.02em;
+      background: rgba(0, 20, 50, 0.25);
+      padding: 0.6rem 2rem;
+      border-radius: 80px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(70, 150, 255, 0.12);
+      margin: 1.5rem 0 1.2rem 0;
+      transition: all 0.2s;
+      word-break: break-all;
+    }
+
+    .contact-email a {
+      color: #b6d4ff;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed rgba(100, 180, 255, 0.3);
+      transition: border 0.2s;
+    }
+
+    .contact-email a:hover {
+      border-bottom-color: #7bb3ff;
+    }
+
+    .serious-badge {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: rgba(180, 210, 255, 0.7);
+      letter-spacing: 0.4px;
+      background: rgba(0, 10, 30, 0.3);
+      padding: 0.5rem 1.8rem;
+      border-radius: 60px;
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(50, 120, 255, 0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 0.5rem;
+      font-weight: 350;
+    }
+
+    .serious-badge span {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #3b9eff;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #3b9eff;
+      margin-right: 4px;
+    }
+
+    .divider-light {
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(70, 160, 255, 0.3), transparent);
+      margin: 1rem 0 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(30px) scale(0.98); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @media (max-width: 560px) {
+      .glass-card {
+        padding: 2rem 1.5rem;
+        border-radius: 40px;
+      }
+      .domain-title {
+        font-size: 2.6rem;
+      }
+      .offer-btn {
+        padding: 1rem 2.4rem;
+        font-size: 1.3rem;
+        width: 100%;
+        max-width: 300px;
+        min-width: unset;
+      }
+      .contact-btn {
+        padding: 0.7rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+        min-width: unset;
+      }
+      .contact-email {
+        font-size: 1rem;
+        padding: 0.5rem 1.2rem;
+        word-break: break-word;
+      }
+      .subtitle {
+        font-size: 1rem;
+        padding: 0.3rem 1.2rem;
+      }
+      .serious-badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .button-group {
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .glass-card {
+        padding: 1.5rem 1rem;
+      }
+      .domain-title {
+        font-size: 2.2rem;
+      }
+    }
+
+    .glass-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 54px;
+      pointer-events: none;
+      box-shadow: 0 0 0 1px rgba(70, 150, 255, 0.06) inset, 0 0 60px rgba(0, 40, 120, 0.1) inset;
+      z-index: 0;
+    }
+
+    .contact-email:hover {
+      background: rgba(0, 30, 80, 0.3);
+      border-color: rgba(70, 160, 255, 0.25);
+    }
+
+    .wa-icon {
+      display: inline-block;
+      filter: drop-shadow(0 0 6px rgba(0, 200, 100, 0.2));
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-card" role="main" aria-label="Domain for sale: VELOZGLOBAL.COM">
+    <div class="content">
+      <h1 class="domain-title">VELOZGLOBAL.COM</h1>
+      <div class="subtitle">This Premium Domain Is Available For Sale</div>
+      <div class="divider-light"></div>
+
+      <div class="button-group">
+        <!-- Make an Offer -->
+        <a href="#" id="whatsappOfferBtn" class="offer-btn" role="button">
+          ✦ Make an Offer
+        </a>
+
+        <!-- Contact Us - WhatsApp direct -->
+        <a href="#" id="whatsappContactBtn" class="contact-btn" role="button">
+          <span class="wa-icon">📱</span> Contact Us
+        </a>
+      </div>
+
+      <div class="contact-email">
+        <a href="mailto:sales@velozglobal.com">sales@velozglobal.com</a>
+      </div>
+
+      <div class="serious-badge">
+        <span></span> Serious Buyers Only • Secure Domain Transfer
+      </div>
+
+      <div style="margin-top: 1.2rem; font-size: 0.7rem; color: rgba(120, 170, 255, 0.2); letter-spacing: 2px; text-transform: uppercase; font-weight: 300;">
+        ⚡ exclusive asset
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // WhatsApp number: +44 7447 976540 (hidden in JS only)
+      const WA_NUMBER = '447447976540';  // without '+'
+      const WA_MESSAGE = 'Hello%20VELOZGLOBAL%2C%20I%20am%20interested%20in%20the%20domain%20and%20would%20like%20to%20discuss%20an%20offer.';
+
+      function openWhatsApp(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Build WhatsApp URL
+        const waUrl = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
+        
+        // Open in new window/tab
+        window.open(waUrl, '_blank');
+        
+        // Fallback: if window.open is blocked, try redirecting same tab
+        // But _blank is more reliable for WhatsApp
+        console.log('Opening WhatsApp...');
+        
+        // Visual feedback
+        const target = e.currentTarget;
+        target.style.transform = 'scale(0.95)';
+        setTimeout(() => { 
+          target.style.transform = ''; 
+        }, 200);
+      }
+
+      // Get both buttons
+      const offerBtn = document.getElementById('whatsappOfferBtn');
+      const contactBtn = document.getElementById('whatsappContactBtn');
+
+      // Attach event listeners with multiple methods for reliability
+      if (offerBtn) {
+        offerBtn.addEventListener('click', openWhatsApp);
+        // Also add touch event for mobile
+        offerBtn.addEventListener('touchstart', function(e) {
+          // Just to ensure it works, but click will handle it
+        }, { passive: true });
+      }
+
+      if (contactBtn) {
+        contactBtn.addEventListener('click', openWhatsApp);
+        contactBtn.addEventListener('touchstart', function(e) {
+          // passive
+        }, { passive: true });
+      }
+
+      // Extra fallback: if somehow the event doesn't fire, use onclick attribute
+      // But we already have addEventListener
+
+      console.log('✅ WhatsApp buttons active — number hidden: +44 7447 976540');
+    })();
+  </script>
+</body>
+</html>
